@@ -35,13 +35,13 @@ services:
     build:
       context: ./gateway
       dockerfile: Dockerfile
-    ports:
-      - 4177:4177
+    #ports:
+    #  - 4177:4177
     env_file: .env
     environment:
       NODE_ENV: "development"
       LOG_LEVEL: "info"
-      API_HOST: "azimutt-gateway"
+      API_HOST: "localhost"
       API_PORT: 4177
       CORS_ALLOW_ORIGIN: "https://dbd.tass.vn"
     networks:

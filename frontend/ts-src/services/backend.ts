@@ -188,7 +188,7 @@ export class Backend {
     }
 
     private gatewayPost = async <Body, Response>(path: string, body: Body, zod: ZodType<Response>): Promise<Response> => {
-        const gateway_local = 'http://localhost:4177'
+        const gateway_local = 'http://azimutt-gateway:4177'
         return Http.postJson(`${gateway_local}/gateway${path}`, body, zod).catch(async localErr => {
             return Http.postJson(`${window.gateway_url}/gateway${path}`, body, zod).catch(remoteErr => {
                 return Promise.reject(`${gateway_local}: ${errorToString(localErr)}\n${window.gateway_url}: ${errorToString(remoteErr)}`)
