@@ -35,8 +35,8 @@ services:
     build:
       context: ./gateway
       dockerfile: Dockerfile
-    #ports:
-    #  - 4177:4177
+    ports:
+      - 4177:4177
     env_file: .env
     environment:
       NODE_ENV: "development"
