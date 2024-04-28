@@ -28,6 +28,17 @@ services:
       SECRET_KEY_BASE: "V4YJeTqulRvtsjMLx1KVVOG496O3NppQ0mC6SyVCCkUsNMh+OFd+1gPnStXzgk5R" # Can literally be anything, but generally generated randomly by tools like mix phx.gen.secret
     networks:
       - caddy_default
+  gateway:
+    container_name: azimutt-gateway
+    restart: always
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      CORS_ALLOW_ORIGIN: "https://dbd.tass.vn"
+    networks:
+      - caddy_default
 volumes:
   pg-data:
 networks:
