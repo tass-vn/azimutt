@@ -27,6 +27,10 @@ services:
       GATEWAY_URL: "https://gateway.dbd.tass.vn"
       DATABASE_URL: "ecto://postgres:yCrfqiUEkpUSgFgr@database/azimutt_dev" # Template : "ecto://db_user:db_password@ip_or_compose_service_name/db_name"
       SECRET_KEY_BASE: "V4YJeTqulRvtsjMLx1KVVOG496O3NppQ0mC6SyVCCkUsNMh+OFd+1gPnStXzgk5R" # Can literally be anything, but generally generated randomly by tools like mix phx.gen.secret
+      SMTP_RELAY: "smtp.zoho.jp"
+      SMTP_USERNAME: "tienngang@tass.vn"
+      SMTP_PASSWORD: "0RJ9jML5QDQg"
+      SMTP_PORT: 587
     networks:
       - caddy_default
   gateway:
