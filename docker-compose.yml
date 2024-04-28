@@ -30,7 +30,7 @@ services:
       SMTP_RELAY: "smtp.zoho.jp"
       SMTP_USERNAME: "tienngang@tass.vn"
       SMTP_PASSWORD: "0RJ9jML5QDQg"
-      SMTP_PORT: 587
+      SMTP_PORT: 465
     networks:
       - caddy_default
   gateway:
