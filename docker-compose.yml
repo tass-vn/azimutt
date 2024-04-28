@@ -9,6 +9,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: yCrfqiUEkpUSgFgr
       POSTGRES_DB: azimutt_dev
+    networks:
+      - caddy_default
   backend:
     container_name: azimutt-backend
     platform: linux/amd64
@@ -24,5 +26,10 @@ services:
     environment:
       DATABASE_URL: "ecto://postgres:yCrfqiUEkpUSgFgr@database/azimutt_dev" # Template : "ecto://db_user:db_password@ip_or_compose_service_name/db_name"
       SECRET_KEY_BASE: "V4YJeTqulRvtsjMLx1KVVOG496O3NppQ0mC6SyVCCkUsNMh+OFd+1gPnStXzgk5R" # Can literally be anything, but generally generated randomly by tools like mix phx.gen.secret
+    networks:
+      - caddy_default
 volumes:
   pg-data:
+networks:
+  caddy_default:
+    external: true
